@@ -1,0 +1,156 @@
+{
+  "meta": {
+    "project": "Pets Almeida Landing Page",
+    "date": "2025-11-12",
+    "prepared_by": "Software Development Manager"
+  },
+  "product_overview": "Pets Almeida is a responsive landing page designed for a pet care service specializing in pet bathing, grooming, and pet taxi services in São Paulo. The landing page communicates services, pricing, payment methods, and contact options with clear calls-to-action to facilitate customer engagement via WhatsApp and phone.",
+  "core_goals": [
+    "Highlight the pet care services and transparent pricing clearly to users.",
+    "Enable easy customer conversion through prominent CTAs linking to WhatsApp and phone calls.",
+    "Communicate all accepted payment methods, including associated fees, transparently.",
+    "Build trust and credibility through an about section and highlighted features.",
+    "Deliver a smooth, simple, and responsive user navigation experience across all devices."
+  ],
+  "key_features": [
+    "Fixed header with anchor navigation for Home, About, Services, Payments, and Contact sections.",
+    "Mobile-friendly hamburger menu that toggles open/close states and updates icons accordingly.",
+    "Smooth scrolling navigation with header offset compensation for anchor links.",
+    "Prominent 'Agende Agora' CTA directing users directly to the contact section.",
+    "Service cards displaying icons, service titles, and detailed pricing tables by pet size and service type.",
+    "Payment section listing accepted payment methods (Credit, Debit with fixed fee, Pix, Cash) with notes on debit fees.",
+    "Contact section showing clickable phone number, Instagram handle, address, and WhatsApp button with prefilled message.",
+    "IntersectionObserver powered fade-in animations on service cards and highlights when they enter the viewport.",
+    "Consistent and friendly UI theme with clear typography, responsive grid layout, and light/dark mode support.",
+    "SEO essentials including semantic HTML structure, lang attribute, meta descriptions, favicon, and robots.txt."
+  ],
+  "user_flow_summary": [
+    "Visitors land on the home page and browse through sections describing services and pricing.",
+    "User initiates contact by clicking the 'Agende Agora' button, which scrolls to the contact section.",
+    "From the contact section, user can choose to start a WhatsApp conversation with a prefilled message or call the business via phone link.",
+    "On mobile devices, users open the hamburger menu to navigate between sections using anchor links.",
+    "Smooth scroll enhances navigation, and animated entry of service cards improves engagement."
+  ],
+  "validation_criteria": [
+    "Fixed header is always visible on desktop and mobile viewports.",
+    "Mobile hamburger menu toggles open and closed with icon and label updating correctly.",
+    "Anchor navigation scrolls smoothly with offset that accounts for fixed header height.",
+    "'Agende Agora' CTA button scrolls user to the contact section reliably.",
+    "Service cards display accurate pricing data consistent with business rules, including Saturday-only Taxi Dog availability and debit payment fees.",
+    "Payment section lists exactly four payment methods with clear debit card fee information.",
+    "Contact section contains clickable phone and WhatsApp links with prefilled messaging and correct social media information.",
+    "IntersectionObserver animations trigger as service cards and highlights scroll into view with fade-in effect.",
+    "Page layout is fully responsive with no visual breaks and supports both light and dark modes.",
+    "SEO best practices are met including correct lang attribute, semantic HTML, and presence of favicon and robots.txt files."
+  ],
+  "code_summary": {
+    "tech_stack": [
+      "TypeScript",
+      "Vue 3",
+      "Nuxt 3",
+      "Tailwind CSS",
+      "Vite (Nuxt dev server)",
+      "ESLint"
+    ],
+    "features": [
+      {
+        "name": "Página inicial",
+        "description": "Landing page única com seções Hero, Sobre, Serviços, Pagamentos e Contato",
+        "files": [
+          "nuxt-app/app/pages/index.vue",
+          "nuxt-app/app/app.vue"
+        ]
+      },
+      {
+        "name": "Componentes de layout",
+        "description": "Header, Footer, navegação e itens de contato",
+        "files": [
+          "nuxt-app/app/components/HeaderBar.vue",
+          "nuxt-app/app/components/NavMenu.vue",
+          "nuxt-app/app/components/MenuToggle.vue",
+          "nuxt-app/app/components/FooterBar.vue",
+          "nuxt-app/app/components/ContactSection.vue",
+          "nuxt-app/app/components/ContactItem.vue",
+          "nuxt-app/app/components/AddressLocationPanel.vue"
+        ]
+      },
+      {
+        "name": "Seções principais",
+        "description": "Hero, destaques, serviços, pagamentos e CTA de agendamento",
+        "files": [
+          "nuxt-app/app/components/HeroSection.vue",
+          "nuxt-app/app/components/HeroPaws.vue",
+          "nuxt-app/app/components/HighlightsSection.vue",
+          "nuxt-app/app/components/ServicesSection.vue",
+          "nuxt-app/app/components/PaymentsSection.vue",
+          "nuxt-app/app/components/ScheduleButton.vue",
+          "nuxt-app/app/components/AgendeAgoraButton.vue"
+        ]
+      },
+      {
+        "name": "Cards de serviço",
+        "description": "Cartões com ícones e tabelas de preço para diferentes serviços",
+        "files": [
+          "nuxt-app/app/components/ServiceCard.vue",
+          "nuxt-app/app/components/services/ServiceTaxiDog.vue",
+          "nuxt-app/app/components/services/ServiceTaxiConsulta.vue",
+          "nuxt-app/app/components/services/ServiceSomenteBanho.vue",
+          "nuxt-app/app/components/services/ServiceBanhoTosaHigienica.vue",
+          "nuxt-app/app/components/services/ServiceBanhoSpitz.vue",
+          "nuxt-app/app/components/services/ServiceTosaTesoura.vue",
+          "nuxt-app/app/components/services/ServiceBanhoFelinos.vue",
+          "nuxt-app/app/components/services/ServiceTosaPadrao.vue",
+          "nuxt-app/app/components/services/ServiceTosaZero.vue"
+        ]
+      },
+      {
+        "name": "Ícones e figuras",
+        "description": "Componentes de ícones 3D e imagens do site",
+        "files": [
+          "nuxt-app/app/components/Dog3DIcon.vue",
+          "nuxt-app/app/components/Cat3DIcon.vue",
+          "nuxt-app/app/components/PawTailwindIcon.vue",
+          "nuxt-app/app/components/ThreeDIcon.vue",
+          "nuxt-app/public/images/dog.jpg",
+          "nuxt-app/public/images/toby.jpg",
+          "nuxt-app/public/images/antes e depois.jpg",
+          "nuxt-app/public/images/tosa higienica.jpg"
+        ]
+      },
+      {
+        "name": "Estilos e tema",
+        "description": "Folhas de estilo do tema e Tailwind",
+        "files": [
+          "nuxt-app/app/assets/css/theme.css",
+          "nuxt-app/assets/css/tailwind.css",
+          "nuxt-app/tailwind.config.ts"
+        ]
+      },
+      {
+        "name": "Configurações de Nuxt",
+        "description": "Configuração do projeto Nuxt e metadados de `<head>`",
+        "files": [
+          "nuxt-app/nuxt.config.ts",
+          "nuxt-app/tsconfig.json",
+          "nuxt-app/eslint.config.cjs",
+          "nuxt-app/.eslintrc.cjs"
+        ]
+      },
+      {
+        "name": "Assets públicos e SEO",
+        "description": "Arquivos públicos como `favicon.ico` e `robots.txt`",
+        "files": [
+          "nuxt-app/public/favicon.ico",
+          "nuxt-app/public/robots.txt"
+        ]
+      },
+      {
+        "name": "Documentação interna",
+        "description": "Documento PRD dentro de `app/docs`",
+        "files": [
+          "nuxt-app/app/docs/prd-pets-almeida.md"
+        ]
+      }
+    ]
+  }
+}

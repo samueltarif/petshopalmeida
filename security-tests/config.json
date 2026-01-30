@@ -1,0 +1,27 @@
+{
+  "host": "http://localhost:3000",
+  "allowNonLocal": false,
+  "endpoints": {
+    "sqli": [],
+    "xss": ["/"],
+    "auth": [],
+    "csrf": [],
+    "paramTampering": [],
+    "api": []
+  },
+  "ddos": {
+    "path": "/",
+    "maxRPS": 20,
+    "durationSeconds": 5,
+    "concurrency": 2
+  },
+  "bruteforce": {
+    "loginPath": null,
+    "userField": "username",
+    "passField": "password",
+    "users": [],
+    "passwords": [],
+    "maxAttempts": 20,
+    "delayMs": 200
+  }
+}

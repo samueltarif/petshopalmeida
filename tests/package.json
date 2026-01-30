@@ -1,0 +1,30 @@
+{
+  "name": "pet-almeida-tests",
+  "version": "1.0.0",
+  "description": "Suite de testes para o sistema Banho e Tosa Almeida",
+  "type": "module",
+  "scripts": {
+    "test": "node run-all-tests.js",
+    "test:functional": "node functional-tests.js",
+    "test:performance": "node performance-tests.js",
+    "test:accessibility": "node accessibility-tests.js",
+    "test:integration": "node integration-tests.js",
+    "test:visual": "node visual-tests.js",
+    "test:mobile": "node mobile-tests.js",
+    "test:seo": "node seo-tests.js",
+    "dev": "cd .. && npm run dev",
+    "build": "cd .. && npm run build",
+    "preview": "cd .. && npm run preview"
+  },
+  "dependencies": {
+    "puppeteer": "^21.6.1",
+    "playwright": "^1.40.1",
+    "lighthouse": "^11.4.0",
+    "axe-core": "^4.8.3",
+    "chalk": "^5.3.0",
+    "fs-extra": "^11.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5"
+  }
+}

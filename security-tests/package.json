@@ -1,0 +1,9 @@
+{
+  "name": "security-tests",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node run_all.js",
+    "info": "node tests/test_info_leakage.js"
+  }
+}

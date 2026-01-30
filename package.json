@@ -1,0 +1,37 @@
+{
+  "name": "pet2-petshop",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "typecheck": "vue-tsc --noEmit",
+    "lint": "eslint . --ext .js,.ts,.vue",
+    "test": "node tests/run-all-tests.js",
+    "test:health": "node tests/system-health-check.js",
+    "test:functional": "node tests/functional-tests.js",
+    "test:performance": "node tests/performance-tests.js",
+    "test:quick": "node tests/quick-check.js",
+    "security-test": "cd security-tests && node run_all.js"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.5.0",
+    "nuxt": "^4.2.1",
+    "nuxt-purgecss": "^2.0.0",
+    "vue": "^3.5.22",
+    "vue-router": "^4.6.3"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.14.0",
+    "@typescript-eslint/eslint-plugin": "^8.46.4",
+    "@typescript-eslint/parser": "^8.46.4",
+    "eslint": "^9.39.1",
+    "eslint-plugin-vue": "^9.33.0",
+    "typescript": "^5.9.3",
+    "vue-eslint-parser": "^10.2.0",
+    "vue-tsc": "^2.2.12"
+  }
+}

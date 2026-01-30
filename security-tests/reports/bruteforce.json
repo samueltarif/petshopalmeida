@@ -1,0 +1,6 @@
+{
+  "timestamp": "2025-11-22T02:44:01.053Z",
+  "target": "http://localhost:3000",
+  "skipped": true,
+  "reason": "Sem loginPath configurado"
+}

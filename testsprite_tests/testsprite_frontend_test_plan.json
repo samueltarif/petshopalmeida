@@ -1,0 +1,367 @@
+[
+  {
+    "id": "TC001",
+    "title": "Verify fixed header visibility on desktop",
+    "description": "Check that the fixed header remains visible and correctly positioned on the viewport when scrolling on desktop browsers.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Open the landing page in a desktop browser."
+      },
+      {
+        "type": "action",
+        "description": "Scroll down through the page content."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the header stays fixed at the top of the viewport and is fully visible."
+      }
+    ]
+  },
+  {
+    "id": "TC002",
+    "title": "Verify fixed header visibility on mobile",
+    "description": "Check that the fixed header remains visible and correctly positioned on mobile devices when scrolling.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Open the landing page in a mobile browser or emulator."
+      },
+      {
+        "type": "action",
+        "description": "Scroll through the page content."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify that the header is always visible and fixed at the top of the viewport."
+      }
+    ]
+  },
+  {
+    "id": "TC003",
+    "title": "Validate mobile hamburger menu toggle open and close",
+    "description": "Check that clicking the hamburger menu toggles its open/close state, with corresponding icon and label updates.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Open the landing page on a mobile device or emulator."
+      },
+      {
+        "type": "action",
+        "description": "Locate and tap the hamburger menu icon."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the menu opens, the icon changes to close icon, and the label updates accordingly."
+      },
+      {
+        "type": "action",
+        "description": "Tap the hamburger menu icon again."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the menu closes, the icon returns to hamburger icon, and the label updates accordingly."
+      }
+    ]
+  },
+  {
+    "id": "TC004",
+    "title": "Anchor navigation scrolls smoothly with offset",
+    "description": "Test that clicking anchor links in the header menu scrolls to the respective sections with a smooth animation and correct offset to avoid header overlay.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Click each anchor navigation link: Home, About, Services, Payments, Contact."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify that the page scrolls smoothly and the section content is fully visible, not hidden behind the fixed header."
+      }
+    ]
+  },
+  {
+    "id": "TC005",
+    "title": "'Agende Agora' button scrolls to Contact section",
+    "description": "Check that clicking the 'Agende Agora' CTA button scrolls the user smoothly and reliably to the contact section.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Locate and click the 'Agende Agora' CTA button on the page."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the page smoothly scrolls to the contact section."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the contact section is fully visible and not obscured by the fixed header."
+      }
+    ]
+  },
+  {
+    "id": "TC006",
+    "title": "Verify service cards display correct icons and titles",
+    "description": "Check that each service card renders with the correct icon and service title as specified.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the Services section."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify each service card shows the correct 3D icon or image and the accurate service title."
+      }
+    ]
+  },
+  {
+    "id": "TC007",
+    "title": "Validate service cards pricing tables by pet size and service type",
+    "description": "Check pricing tables within service cards display correct prices according to pet size and service category, including Saturday-only Taxi Dog condition.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Open each service card in the Services section."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify prices correspond correctly to pet sizes and types per the business rules."
+      },
+      {
+        "type": "assertion",
+        "description": "Ensure the Taxi Dog service displays availability only on Saturdays."
+      }
+    ]
+  },
+  {
+    "id": "TC008",
+    "title": "Verify payment methods and fee details accuracy",
+    "description": "Check that the Payments section lists exactly four payment methods: Credit, Debit with fixed fee, Pix, and Cash, including notes on debit card fees.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the Payments section."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify that the payment methods Credit, Debit, Pix, and Cash are all listed."
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm that debit card payment fee information is clearly and accurately displayed."
+      }
+    ]
+  },
+  {
+    "id": "TC009",
+    "title": "Validate contact section clickable links and prefilled WhatsApp message",
+    "description": "Check that the phone number and WhatsApp button are clickable and open correct communication channels, with WhatsApp button containing the specified prefilled message.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "In the Contact section, click the phone number link."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the device initiates a phone call or opens the dialer with the correct number."
+      },
+      {
+        "type": "action",
+        "description": "Click the WhatsApp contact button."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify WhatsApp opens or redirects with the prefilled message ready to send."
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm the Instagram handle and address are correctly displayed and linked or presented as specified."
+      }
+    ]
+  },
+  {
+    "id": "TC010",
+    "title": "Check IntersectionObserver fade-in animations trigger correctly",
+    "description": "Test that service cards and highlight sections fade in as they enter the viewport using IntersectionObserver.",
+    "category": "ui",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Scroll through the Services and Highlights sections slowly."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify each service card and highlight visually fade in as it becomes visible in the viewport."
+      }
+    ]
+  },
+  {
+    "id": "TC011",
+    "title": "Validate mobile hamburger menu accessibility and usability",
+    "description": "Check that the hamburger menu is accessible via keyboard and screen readers, toggles correctly, and navigation items are properly focusable.",
+    "category": "ui",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Open the landing page on a mobile device or emulator."
+      },
+      {
+        "type": "action",
+        "description": "Use keyboard navigation to focus and toggle the hamburger menu."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify that menu toggling works with keyboard controls and ARIA labels update accordingly."
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm navigation links inside menu can be focused and activated by keyboard."
+      }
+    ]
+  },
+  {
+    "id": "TC012",
+    "title": "Page layout responsive design across viewport sizes",
+    "description": "Validate that the landing page layout adapts correctly without visual breakage on various screen widths, including desktop, tablet, and mobile.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Access the landing page on multiple devices or resize the browser to different viewport widths."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify that grid layouts, typography, images, and navigation respond gracefully without horizontal scroll or overlapping content."
+      }
+    ]
+  },
+  {
+    "id": "TC013",
+    "title": "Verify light and dark mode theme support",
+    "description": "Test that the UI theme toggles or automatically adapts correctly between light and dark modes, preserving readability and visual consistency.",
+    "category": "ui",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Switch device or browser theme between light and dark, if supported."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify page colors, typography contrast, and UI elements update appropriately and remain readable."
+      }
+    ]
+  },
+  {
+    "id": "TC014",
+    "title": "Validate SEO essentials inclusion",
+    "description": "Check webpage header for correct lang attribute, semantic HTML elements usage, meta descriptions, presence of favicon and robots.txt files.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Inspect the landing page source or use developer tools to analyze head elements."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the HTML tag includes correct lang attribute for Portuguese (Brazil)."
+      },
+      {
+        "type": "assertion",
+        "description": "Check presence of meta description tag with appropriate content."
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm semantic HTML sections (header, nav, main, footer, article, section) are used properly."
+      },
+      {
+        "type": "action",
+        "description": "Verify the /favicon.ico and /robots.txt files are present on the server."
+      },
+      {
+        "type": "assertion",
+        "description": "Ensure favicon loads correctly in the browser tab and robots.txt contains appropriate instructions."
+      }
+    ]
+  },
+  {
+    "id": "TC015",
+    "title": "Error handling: Invalid navigation link anchor",
+    "description": "Simulate a broken or invalid anchor link in navigation and observe the behavior to ensure graceful handling.",
+    "category": "error handling",
+    "priority": "Low",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Modify navigation link to an invalid anchor (e.g., #invalid-section) and click it."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the page does not throw errors and remains stable without crashing."
+      },
+      {
+        "type": "assertion",
+        "description": "Check that no unexpected scroll occurs or user is alerted gracefully."
+      }
+    ]
+  },
+  {
+    "id": "TC016",
+    "title": "Edge case: Service card pricing display when data is missing",
+    "description": "Test how service cards behave if pricing data for some pet sizes or service types is incomplete or missing.",
+    "category": "error handling",
+    "priority": "Low",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Simulate missing pricing data for a specific service card."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the UI handles missing data gracefully, e.g., shows 'Contact us' or hides that row without breaking layout."
+      }
+    ]
+  },
+  {
+    "id": "TC017",
+    "title": "Edge case: Slow network impact on service card animation",
+    "description": "Test if the IntersectionObserver fade-in animations still trigger correctly under slow network or delayed resource loading conditions.",
+    "category": "ui",
+    "priority": "Low",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Simulate slow network connection (e.g., throttling in devtools)."
+      },
+      {
+        "type": "action",
+        "description": "Scroll through Services and Highlights sections."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify fade-in animations still trigger properly once the elements become visible."
+      }
+    ]
+  }
+]
