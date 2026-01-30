@@ -3,10 +3,5 @@
   "buildCommand": "npm run build",
   "outputDirectory": ".output/public",
   "devCommand": "npm run dev",
-  "installCommand": "npm install",
-  "functions": {
-    "app/server/index.mjs": {
-      "runtime": "nodejs18.x"
-    }
-  }
+  "installCommand": "npm install"
 }
