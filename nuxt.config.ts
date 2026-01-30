@@ -19,17 +19,7 @@ export default defineNuxtConfig({
           'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload',
           'Cross-Origin-Opener-Policy': 'same-origin'
         }
-      },
-      // Prerender páginas de bairros para melhor SEO
-      '/bairros': { prerender: true },
-      '/bairro/cachoeirinha': { prerender: true },
-      '/bairro/vila-penteado': { prerender: true },
-      '/bairro/brasilandia': { prerender: true },
-      '/bairro/eliza-maria': { prerender: true },
-      '/bairro/pinheiros': { prerender: true },
-      '/bairro/vila-madalena': { prerender: true },
-      '/bairro/perdizes': { prerender: true },
-      '/bairro/santana': { prerender: true }
+      }
     }
   },
   app: {
@@ -40,7 +30,8 @@ export default defineNuxtConfig({
         {
           rel: 'stylesheet',
           href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap'
-        }
+        },
+        { rel: 'preload', href: '/images/foto_capa.png', as: 'image' }
       ],
       meta: [
         // Meta tags para evitar cache em desenvolvimento

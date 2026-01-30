@@ -1,0 +1,128 @@
+/* Correções específicas para deploy no Vercel */
+
+/* Garantir que imagens de fundo sejam carregadas */
+.hero {
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/foto_capa.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: scroll !important;
+  min-height: 100vh !important;
+}
+
+/* Fallback para quando a imagem não carregar */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #2B5F8D 0%, #87CEEB 100%);
+  z-index: -1;
+}
+
+/* Garantir visibilidade de todos os ícones */
+.payment-icon,
+.contact-item .icon,
+.service-icon,
+[class*="3d"],
+[class*="Icon"] {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Fallbacks para ícones que não carregarem */
+.payment-icon:empty::before {
+  content: '💳';
+  font-size: 48px;
+  display: block;
+}
+
+.contact-item .icon:empty::before {
+  content: '📞';
+  font-size: 24px;
+  display: block;
+}
+
+/* Específicos para cada tipo de ícone */
+.payment-card:nth-child(1) .payment-icon:empty::before,
+.payment-card:nth-child(2) .payment-icon:empty::before {
+  content: '💳'; /* Cartão */
+}
+
+.payment-card:nth-child(3) .payment-icon:empty::before {
+  content: '💰'; /* Pix */
+}
+
+.payment-card:nth-child(4) .payment-icon:empty::before {
+  content: '💵'; /* Dinheiro */
+}
+
+/* WhatsApp e Instagram fallbacks */
+[data-icon="whatsapp"] .icon:empty::before,
+.contact-item:has([class*="whatsapp"]) .icon:empty::before {
+  content: '💬';
+  color: #25D366;
+}
+
+[data-icon="instagram"] .icon:empty::before,
+.contact-item:has([class*="instagram"]) .icon:empty::before {
+  content: '📷';
+  color: #E4405F;
+}
+
+/* Garantir que o texto seja sempre visível no hero */
+.hero h1,
+.hero p,
+.hero .tagline,
+.hero .welcome {
+  color: #FFFFFF !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
+}
+
+/* Garantir que botões sejam sempre visíveis */
+.cta-button,
+.cta-button-custom,
+button {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: inline-flex !important;
+}
+
+/* Correções para mobile */
+@media (max-width: 768px) {
+  .hero {
+    background-position: center top !important;
+    min-height: 100vh !important;
+  }
+  
+  .hero-content {
+    background: rgba(0,0,0,0.9) !important;
+    backdrop-filter: blur(10px) !important;
+  }
+}
+
+/* Garantir que as seções sejam sempre visíveis */
+section {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Correções para componentes que podem não carregar */
+.service-card,
+.payment-card,
+.contact-item {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+}
+
+/* Garantir que grids funcionem */
+.payment-grid,
+.services-grid,
+.highlights {
+  display: grid !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
