@@ -1,8 +1,10 @@
-/* Correções específicas para deploy no Vercel */
+/* Correções FORÇADAS para Vercel - Versão Robusta */
 
-/* Garantir que imagens de fundo sejam carregadas */
-.hero {
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/foto_capa.png') !important;
+/* FORÇA imagem de fundo do hero */
+.hero,
+section#home,
+[id="home"] {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/foto_capa.png') !important;
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
@@ -10,21 +12,26 @@
   min-height: 100vh !important;
 }
 
-/* Fallback para quando a imagem não carregar */
-.hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, #2B5F8D 0%, #87CEEB 100%);
-  z-index: -1;
+/* Fallback GARANTIDO para quando a imagem não carregar */
+.hero::after,
+section#home::after {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(135deg, #2B5F8D 0%, #4A90E2 50%, #87CEEB 100%) !important;
+  z-index: -2 !important;
 }
 
-/* Garantir visibilidade de todos os ícones */
+/* FORÇA visibilidade de TODOS os ícones */
 .payment-icon,
+.payment-icon *,
 .contact-item .icon,
+.contact-icon-container,
+.contact-icon-container *,
 .service-icon,
 [class*="3d"],
-[class*="Icon"] {
+[class*="Icon"],
+svg {
   opacity: 1 !important;
   visibility: visible !important;
   display: flex !important;
@@ -32,97 +39,121 @@
   justify-content: center !important;
 }
 
-/* Fallbacks para ícones que não carregarem */
-.payment-icon:empty::before {
-  content: '💳';
-  font-size: 48px;
-  display: block;
+/* FORÇA fallbacks para ícones - SEMPRE VISÍVEIS */
+.payment-icon::after {
+  content: '💳' !important;
+  font-size: 48px !important;
+  display: block !important;
+  position: absolute !important;
+  z-index: 999 !important;
 }
 
-.contact-item .icon:empty::before {
-  content: '📞';
-  font-size: 24px;
-  display: block;
+.payment-card:nth-child(3) .payment-icon::after {
+  content: '💰' !important; /* Pix */
 }
 
-/* Específicos para cada tipo de ícone */
-.payment-card:nth-child(1) .payment-icon:empty::before,
-.payment-card:nth-child(2) .payment-icon:empty::before {
-  content: '💳'; /* Cartão */
+.payment-card:nth-child(4) .payment-icon::after {
+  content: '💵' !important; /* Dinheiro */
 }
 
-.payment-card:nth-child(3) .payment-icon:empty::before {
-  content: '💰'; /* Pix */
+/* FORÇA fallbacks para contato */
+.contact-icon-container::after {
+  content: '📞' !important;
+  font-size: 24px !important;
+  display: block !important;
+  position: absolute !important;
+  z-index: 999 !important;
 }
 
-.payment-card:nth-child(4) .payment-icon:empty::before {
-  content: '💵'; /* Dinheiro */
+[class*="whatsapp"] .contact-icon-container::after,
+[href*="wa.me"] .contact-icon-container::after {
+  content: '💬' !important;
+  color: #25D366 !important;
 }
 
-/* WhatsApp e Instagram fallbacks */
-[data-icon="whatsapp"] .icon:empty::before,
-.contact-item:has([class*="whatsapp"]) .icon:empty::before {
-  content: '💬';
-  color: #25D366;
+[class*="instagram"] .contact-icon-container::after,
+[href*="instagram"] .contact-icon-container::after {
+  content: '📷' !important;
+  color: #E4405F !important;
 }
 
-[data-icon="instagram"] .icon:empty::before,
-.contact-item:has([class*="instagram"]) .icon:empty::before {
-  content: '📷';
-  color: #E4405F;
-}
-
-/* Garantir que o texto seja sempre visível no hero */
+/* FORÇA texto visível no hero */
 .hero h1,
 .hero p,
 .hero .tagline,
-.hero .welcome {
+.hero .welcome,
+section#home h1,
+section#home p {
   color: #FFFFFF !important;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.9) !important;
+  font-weight: bold !important;
 }
 
-/* Garantir que botões sejam sempre visíveis */
+/* FORÇA botões sempre visíveis */
 .cta-button,
 .cta-button-custom,
-button {
+button,
+a[class*="button"] {
   opacity: 1 !important;
   visibility: visible !important;
   display: inline-flex !important;
+  background: #2B5F8D !important;
+  color: white !important;
+  padding: 16px 32px !important;
+  border-radius: 12px !important;
+  text-decoration: none !important;
 }
 
-/* Correções para mobile */
-@media (max-width: 768px) {
-  .hero {
-    background-position: center top !important;
-    min-height: 100vh !important;
-  }
-  
-  .hero-content {
-    background: rgba(0,0,0,0.9) !important;
-    backdrop-filter: blur(10px) !important;
-  }
-}
-
-/* Garantir que as seções sejam sempre visíveis */
-section {
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-/* Correções para componentes que podem não carregar */
-.service-card,
-.payment-card,
-.contact-item {
+/* FORÇA seções sempre visíveis */
+section,
+#home, #servicos, #pagamento, #contato {
   opacity: 1 !important;
   visibility: visible !important;
   display: block !important;
 }
 
-/* Garantir que grids funcionem */
+/* FORÇA grids funcionando */
 .payment-grid,
 .services-grid,
 .highlights {
   display: grid !important;
   opacity: 1 !important;
   visibility: visible !important;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+  gap: 20px !important;
+}
+
+/* FORÇA cards sempre visíveis */
+.service-card,
+.payment-card,
+.contact-item,
+.contact-item-wrapper {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  background: white !important;
+  border: 1px solid #E5E7EB !important;
+  border-radius: 12px !important;
+  padding: 24px !important;
+}
+
+/* Correções FORÇADAS para mobile */
+@media (max-width: 768px) {
+  .hero,
+  section#home {
+    background-position: center top !important;
+    min-height: 100vh !important;
+    background-attachment: scroll !important;
+  }
+  
+  .hero-content {
+    background: rgba(0,0,0,0.8) !important;
+    backdrop-filter: blur(10px) !important;
+    padding: 30px 15px !important;
+    border-radius: 20px !important;
+  }
+  
+  .payment-grid {
+    grid-template-columns: 1fr !important;
+  }
 }

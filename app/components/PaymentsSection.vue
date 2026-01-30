@@ -12,11 +12,11 @@
         <div class="payment-note">Taxa de maquininha: R$ 5,00</div>
       </div>
       <div class="payment-card">
-        <div class="payment-icon">📱</div>
+        <div class="payment-icon">💰</div>
         <div class="payment-method">Pix</div>
       </div>
       <div class="payment-card">
-        <div class="payment-icon">💰</div>
+        <div class="payment-icon">💵</div>
         <div class="payment-method">Dinheiro</div>
       </div>
     </div>
