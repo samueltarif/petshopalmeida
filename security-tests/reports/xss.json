@@ -1,0 +1,8 @@
+{
+  "timestamp": "2025-11-22T02:44:01.052Z",
+  "target": "http://localhost:3000",
+  "endpoints": [
+    "/"
+  ],
+  "findings": []
+}

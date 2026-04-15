@@ -1,0 +1,16 @@
+{
+  "status": "commited",
+  "type": "frontend",
+  "scope": "codebase",
+  "localEndpoint": "http://localhost:3000",
+  "executionArgs": {
+    "projectName": "nuxt-app",
+    "projectPath": "c:\\Users\\samue\\OneDrive\\Documentos\\Área de Trabalho\\petshop\\nuxt-app",
+    "testIds": [],
+    "additionalInstruction": "",
+    "envs": {
+      "API_KEY": "sk-user-m8Qy3uU2uec7ZqhyIqON6t-TMnFCn9npo3aI75UZUmwL4ov0rxCs1mo8LjlhKC-0s3EWRSA-NZJ4FWOhpJAV1bM3D--I3O7RyEgI2HNTqPjutu87idmLWTtmtDvByjjadXs"
+    }
+  },
+  "proxy": "http://736037cf-43da-4dad-b89a-67e328f4384f:OIJERHmY0ZHhZhCE98Ks2XMqHvOtmfnM@tun.testsprite.com:8080"
+}

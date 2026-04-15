@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Bridge Tailwind with existing CSS variables for theming */
+:root {
+  --tw-ring-color: rgba(59, 130, 246, 0.5);
+}
+
+/* Optional: smooth fonts globally via Tailwind layer */
+@layer base {
+  html { font-family: var(--font-family-base, ui-sans-serif, system-ui), sans-serif; }
+}
