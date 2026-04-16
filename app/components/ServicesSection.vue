@@ -10,10 +10,12 @@
           :title="service.title"
           :description="service.description"
           :prices="service.prices"
+          :service-options="service.serviceOptions"
           :icon="service.icon"
-          :image="service.image"
+          :images="service.images"
           :animation="service.animation"
           :whatsapp-message="service.whatsappMessage"
+          :extra-info="service.extraInfo"
           :class="`animate-on-scroll animate-fade-up animate-delay-${Math.min(index * 100, 500)}`"
         />
       </div>
@@ -29,7 +31,12 @@ const services = [
     title: 'Somente Banho',
     description: 'Banho completo com produtos de qualidade',
     icon: '🛁',
-    image: '/images/Somente Banho.jpg',
+    images: [
+      '/images/Somente Banho.jpg',
+      '/images/Somente Banho1.jpg',
+      '/images/Somente Banho2.jpg',
+      '/images/Somente Banho3.jpg'
+    ],
     prices: [
       { size: 'Mini', value: 'R$ 40' },
       { size: 'Pequeno', value: 'R$ 50' },
@@ -42,7 +49,10 @@ const services = [
     title: 'Banho + Tosa Higiênica',
     description: 'Banho completo com tosa higiênica',
     icon: '✂️',
-    image: '/images/tosahigienica.jpg',
+    images: [
+      '/images/tosahigienica.jpg',
+      '/images/tosa higienica.jpg'
+    ],
     prices: [
       { size: 'Mini', value: 'R$ 50' },
       { size: 'Pequeno', value: 'R$ 60' },
@@ -54,7 +64,12 @@ const services = [
     title: 'Tosa Padrão',
     description: 'Tosa completa no padrão da raça',
     icon: '💇',
-    image: '/images/Tosa Padrão.jpg',
+    images: [
+      '/images/Tosa Padrão.jpg',
+      '/images/Tosa Padrão1.jpg',
+      '/images/Tosa Padrão2.jpg',
+      '/images/Tosa Padrão3.jpg'
+    ],
     prices: [
       { size: 'Mini', value: 'R$ 60' },
       { size: 'Pequeno', value: 'R$ 70' },
@@ -66,7 +81,11 @@ const services = [
     title: 'Tosa Tesoura',
     description: 'Tosa delicada com tesoura',
     icon: '✨',
-    image: '/images/tosatesoura.jpg',
+    images: [
+      '/images/tosatesoura.jpg',
+      '/images/tosatesoura1.jpg',
+      '/images/tosatesoura2.jpg'
+    ],
     prices: [
       { size: 'Mini', value: 'R$ 70' },
       { size: 'Pequeno', value: 'R$ 80' },
@@ -78,7 +97,11 @@ const services = [
     title: 'Tosa Zero',
     description: 'Tosa completa bem curtinha',
     icon: '🪒',
-    image: '/images/Tosa Zero.jpg',
+    images: [
+      '/images/Tosa Zero.jpg',
+      '/images/Tosa Zero1.jpg',
+      '/images/Tosa Zero2.jpg'
+    ],
     prices: [
       { size: 'Mini', value: 'R$ 60' },
       { size: 'Pequeno', value: 'R$ 70' },
@@ -90,7 +113,10 @@ const services = [
     title: 'Banho Spitz',
     description: 'Banho especial para raças Spitz',
     icon: '🐕',
-    image: '/images/splitz.png',
+    images: [
+      '/images/splitz.png',
+      '/images/splitz1.jpg'
+    ],
     prices: [
       { size: 'Mini', value: 'R$ 80' },
       { size: 'Pequeno', value: 'R$ 90' },
@@ -102,19 +128,37 @@ const services = [
     title: 'Banho Felinos',
     description: 'Banho especializado para gatos',
     icon: '🐱',
-    image: '/images/Banho Felinos.jpg',
-    prices: [
-      { size: 'Mini', value: 'R$ 60' },
-      { size: 'Pequeno', value: 'R$ 70' },
-      { size: 'Médio', value: 'R$ 80' },
-      { size: 'Grande', value: '-' }
-    ]
+    images: [
+      '/images/Banho Felinos.jpg',
+      '/images/Banho Felinos1.jpg',
+      '/images/Banho Felinos2.jpg'
+    ],
+    serviceOptions: [
+      {
+        name: 'Banho a Seco',
+        prices: [
+          { size: 'Filhote', value: 'R$ 60' },
+          { size: 'Adulto', value: 'R$ 100' }
+        ]
+      },
+      {
+        name: 'Banho Molhado',
+        prices: [
+          { size: 'Filhote', value: 'R$ 80' },
+          { size: 'Adulto', value: 'R$ 120' }
+        ]
+      }
+    ],
+    extraInfo: 'INCLUSO CORTE DE UNHA'
   },
   {
     title: 'Remoção Pelo Morto',
     description: 'Remoção de pelos mortos',
     icon: '🧹',
-    image: '/images/remova_pelo.jpg',
+    images: [
+      '/images/remova_pelo.jpg',
+      '/images/remove_pelo2.jpg'
+    ],
     prices: [
       { size: 'Mini', value: 'R$ 30' },
       { size: 'Pequeno', value: 'R$ 40' },
