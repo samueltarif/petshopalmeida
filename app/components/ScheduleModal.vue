@@ -11,10 +11,21 @@
             <h2 class="modal-title">Agendar Serviço</h2>
             
             <PetInfoForm
+              v-if="showPetInfo"
               v-model:pet-size="petSize"
               v-model:fur-type="furType"
               :estimated-duration="estimatedDuration"
             />
+            
+            <!-- Info para serviços sem porte/pelo -->
+            <div v-if="!showPetInfo" class="service-info">
+              <div class="info-card">
+                <i class="fas fa-clock"></i>
+                <div>
+                  <strong>Duração:</strong> {{ serviceDuration }}
+                </div>
+              </div>
+            </div>
             
             <CalendarPicker
               v-model="selectedDate"
@@ -41,19 +52,35 @@ import { ref, computed } from 'vue'
 
 interface Props {
   isOpen: boolean
+  serviceTitle?: string
+  serviceDuration?: string
 }
 
 interface Emits {
   (e: 'close'): void
 }
 
-const props = defineProps<Props>()
+const props = withDefaults(defineProps<Props>(), {
+  serviceTitle: '',
+  serviceDuration: '1h'
+})
 const emit = defineEmits<Emits>()
 
 const petSize = ref('Pequeno')
 const furType = ref('Pelo curto')
 const selectedDate = ref<Date | null>(null)
 const minDate = new Date()
+
+// Serviços que não precisam de informações de porte e pelo
+const servicesWithoutPetInfo = [
+  'Dog Walker – Passeios com seu pet',
+  'Taxi Dog',
+  'Táxi Pet para Consulta'
+]
+
+const showPetInfo = computed(() => {
+  return !servicesWithoutPetInfo.includes(props.serviceTitle)
+})
 
 const estimatedDuration = computed(() => {
   const base = {
@@ -74,6 +101,9 @@ const estimatedDuration = computed(() => {
 })
 
 const canSchedule = computed(() => {
+  if (!showPetInfo.value) {
+    return selectedDate.value !== null
+  }
   return petSize.value && furType.value && selectedDate.value !== null
 })
 
@@ -92,7 +122,10 @@ const handleSchedule = () => {
     year: 'numeric'
   })
   
-  const message = `Olá! Gostaria de agendar um serviço:
+  let message = ''
+  
+  if (showPetInfo.value) {
+    message = `Olá! Gostaria de agendar um serviço:
 
 📅 Data: ${dateStr}
 🐾 Porte: ${petSize.value}
@@ -100,6 +133,14 @@ const handleSchedule = () => {
 ⏱️ Duração estimada: ${estimatedDuration.value} minutos
 
 Aguardo confirmação!`
+  } else {
+    message = `Olá! Gostaria de agendar: ${props.serviceTitle}
+
+📅 Data: ${dateStr}
+⏱️ Duração: ${props.serviceDuration}
+
+Aguardo confirmação!`
+  }
   
   const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
   window.open(url, '_blank')
@@ -168,6 +209,30 @@ Aguardo confirmação!`
   color: #333;
   margin-bottom: 24px;
   text-align: center;
+}
+
+.service-info {
+  margin-bottom: 24px;
+}
+
+.info-card {
+  background: #f0f7ff;
+  border: 2px solid #4A90E2;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #2B5F8D;
+}
+
+.info-card i {
+  font-size: 24px;
+  color: #4A90E2;
+}
+
+.info-card strong {
+  font-weight: 600;
 }
 
 .btn-schedule-final {

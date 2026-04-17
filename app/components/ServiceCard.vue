@@ -77,6 +77,8 @@
     
     <ScheduleModal
       :is-open="showScheduleModal"
+      :service-title="title"
+      :service-duration="description"
       @close="closeScheduleModal"
     />
   </div>
