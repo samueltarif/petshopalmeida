@@ -170,3 +170,56 @@ h3 { font-size: clamp(20px, 3vw, 28px); }
   animation: fade-in-hero 1s ease-out forwards;
 }
 
+
+/* Animações diagonais para fundo */
+@keyframes float-diagonal-1 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(30px, -30px) rotate(10deg);
+  }
+}
+
+@keyframes float-diagonal-2 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(-40px, 40px) rotate(-15deg);
+  }
+}
+
+@keyframes float-diagonal-3 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(25px, 25px) rotate(8deg);
+  }
+}
+
+@keyframes float-diagonal-4 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(-35px, -35px) rotate(-12deg);
+  }
+}
+
+.animate-float-diagonal-1 {
+  animation: float-diagonal-1 15s ease-in-out infinite;
+}
+
+.animate-float-diagonal-2 {
+  animation: float-diagonal-2 18s ease-in-out infinite;
+}
+
+.animate-float-diagonal-3 {
+  animation: float-diagonal-3 20s ease-in-out infinite;
+}
+
+.animate-float-diagonal-4 {
+  animation: float-diagonal-4 22s ease-in-out infinite;
+}

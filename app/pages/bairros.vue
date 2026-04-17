@@ -16,7 +16,12 @@
             :to="`/bairro/${bairro.slug}`"
             class="bairro-card fade-in bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all hover:transform hover:-translate-y-1"
           >
-            <div class="text-5xl mb-4">📍</div>
+            <div class="w-20 h-20 mb-4 mx-auto">
+              <LottieAnimation 
+                animation-url="/animations/dog.json"
+                class="w-full h-full"
+              />
+            </div>
             <h2 class="text-2xl font-bold text-[var(--pet-primary)] mb-2">{{ bairro.nome }}</h2>
             <p class="text-[var(--color-text-light)]">{{ bairro.descricao }}</p>
             <div class="mt-4 text-[var(--pet-primary)] font-semibold">

@@ -1,9 +1,113 @@
 <template>
-  <div>
+  <div class="relative">
     <HeaderBar />
     
-    <section class="pt-32 pb-12 bg-gradient-to-r from-[var(--pet-primary)] to-[var(--pet-secondary)] text-white">
-      <div class="container mx-auto px-4 text-center">
+    <!-- Animações de fundo -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+      <!-- Animação 1 - Canto superior esquerdo -->
+      <div class="absolute top-20 left-10 w-24 h-24 opacity-10 animate-float-diagonal-1">
+        <LottieAnimation 
+          animation-url="/animations/dog.json"
+          class="w-full h-full"
+        />
+      </div>
+      
+      <!-- Animação 2 - Canto superior direito -->
+      <div class="absolute top-32 right-16 w-28 h-28 opacity-10 animate-float-diagonal-2">
+        <LottieAnimation 
+          animation-url="/animations/Dog Running.json"
+          class="w-full h-full"
+        />
+      </div>
+      
+      <!-- Animação 3 - Meio esquerda -->
+      <div class="absolute top-1/3 left-20 w-20 h-20 opacity-10 animate-float-diagonal-3">
+        <LottieAnimation 
+          animation-url="/animations/Woman holding a Dog.json"
+          class="w-full h-full"
+        />
+      </div>
+      
+      <!-- Animação 4 - Meio direita -->
+      <div class="absolute top-1/2 right-24 w-32 h-32 opacity-10 animate-float-diagonal-4">
+        <LottieAnimation 
+          animation-url="/animations/dog.json"
+          class="w-full h-full"
+        />
+      </div>
+      
+      <!-- Animação 5 - Inferior esquerda -->
+      <div class="absolute bottom-32 left-16 w-24 h-24 opacity-10 animate-float-diagonal-1">
+        <LottieAnimation 
+          animation-url="/animations/Taking the Duggy out.json"
+          class="w-full h-full"
+        />
+      </div>
+      
+      <!-- Animação 6 - Inferior direita -->
+      <div class="absolute bottom-20 right-20 w-28 h-28 opacity-10 animate-float-diagonal-2">
+        <LottieAnimation 
+          animation-url="/animations/Dog Running.json"
+          class="w-full h-full"
+        />
+      </div>
+    </div>
+    
+    <section class="relative z-10 pt-32 pb-12 overflow-hidden text-white">
+      <!-- Fundo com animações desfocadas -->
+      <div class="absolute inset-0 bg-gradient-to-r from-[var(--pet-primary)] to-[var(--pet-secondary)] opacity-90"></div>
+      
+      <div class="absolute inset-0 overflow-hidden">
+        <!-- Animação 1 -->
+        <div class="absolute top-10 left-10 w-40 h-40 blur-md opacity-30 animate-float-diagonal-1">
+          <LottieAnimation 
+            animation-url="/animations/dog.json"
+            class="w-full h-full"
+          />
+        </div>
+        
+        <!-- Animação 2 -->
+        <div class="absolute top-5 right-20 w-48 h-48 blur-md opacity-25 animate-float-diagonal-2">
+          <LottieAnimation 
+            animation-url="/animations/Dog Running.json"
+            class="w-full h-full"
+          />
+        </div>
+        
+        <!-- Animação 3 -->
+        <div class="absolute top-20 left-1/3 w-36 h-36 blur-md opacity-20 animate-float-diagonal-3">
+          <LottieAnimation 
+            animation-url="/animations/Woman holding a Dog.json"
+            class="w-full h-full"
+          />
+        </div>
+        
+        <!-- Animação 4 -->
+        <div class="absolute top-0 right-1/4 w-44 h-44 blur-md opacity-30 animate-float-diagonal-4">
+          <LottieAnimation 
+            animation-url="/animations/Taking the Duggy out.json"
+            class="w-full h-full"
+          />
+        </div>
+        
+        <!-- Animação 5 -->
+        <div class="absolute bottom-5 left-1/4 w-40 h-40 blur-md opacity-25 animate-float-diagonal-1">
+          <LottieAnimation 
+            animation-url="/animations/dog.json"
+            class="w-full h-full"
+          />
+        </div>
+        
+        <!-- Animação 6 -->
+        <div class="absolute bottom-10 right-10 w-48 h-48 blur-md opacity-30 animate-float-diagonal-2">
+          <LottieAnimation 
+            animation-url="/animations/Dog in the park.json"
+            class="w-full h-full"
+          />
+        </div>
+      </div>
+      
+      <div class="container mx-auto px-4 text-center relative z-10">
         <h1 class="mb-4">Banho e Tosa em {{ bairroData.nome }}</h1>
         <p class="text-xl max-w-2xl mx-auto">
           Atendemos a região de {{ bairroData.nome }} com carinho e profissionalismo
@@ -11,7 +115,7 @@
       </div>
     </section>
     
-    <section class="py-20 bg-white">
+    <section class="relative z-10 py-20 bg-white">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto mb-12">
           <h2 class="text-3xl font-bold text-[var(--pet-primary)] mb-6">Sobre o Atendimento em {{ bairroData.nome }}</h2>
@@ -47,7 +151,7 @@
     
     <ServicesSection />
     
-    <section class="py-20 bg-[var(--color-bg-2)]">
+    <section class="relative z-10 py-20 bg-[var(--color-bg-2)]">
       <div class="container mx-auto px-4 text-center">
         <h2 class="text-3xl font-bold text-[var(--pet-primary)] mb-6">
           Agende Agora em {{ bairroData.nome }}

@@ -167,22 +167,48 @@ const services = [
     ]
   },
   {
-    title: 'Passeador de Cães',
-    description: 'Passeio de 30 minutos',
+    title: 'Dog Walker – Passeios com seu pet',
+    description: 'Passeio de até 1h',
     icon: '🦮',
     animation: '/animations/Taking the Duggy out.json',
     prices: [
-      { size: 'Todos', value: 'R$ 25' },
-      { size: '30 min', value: '' }
+      { size: 'Todos', value: 'A combinar' }
     ]
   },
   {
-    title: 'Táxi Dog',
-    description: 'Transporte seguro para seu pet',
+    title: 'Taxi Dog',
+    description: 'Fazemos TAXI DOG',
     icon: '🚗',
     animation: '/animations/Colchester-Airport-Taxi.json',
-    prices: [
-      { size: 'Consultar', value: '' }
+    extraInfo: 'SOMENTE SÁBADO',
+    serviceOptions: [
+      {
+        name: 'Distância',
+        prices: [
+          { size: '1 a 2 km', value: 'R$ 10,00' },
+          { size: '2 a 4 km', value: 'R$ 20,00' },
+          { size: '4 a 6 km', value: 'R$ 40,00' },
+          { size: '6 a 10 km', value: 'R$ 60,00' },
+          { size: '10 a 15 km', value: 'R$ 80,00' }
+        ]
+      }
+    ]
+  },
+  {
+    title: 'Táxi Pet para Consulta',
+    description: 'Levamos seu pet para consulta',
+    icon: '🏥',
+    animation: '/animations/dog stethoscope.json',
+    serviceOptions: [
+      {
+        name: 'Destinos',
+        prices: [
+          { size: '✓ Hospitais', value: '' },
+          { size: '✓ Clínicas Veterinárias', value: '' },
+          { size: '✓ Consultas/Exames', value: '' },
+          { size: '✓ Castrações', value: '' }
+        ]
+      }
     ]
   }
 ]
