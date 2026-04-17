@@ -2,7 +2,12 @@
   <header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
     <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
       <div class="text-2xl font-bold text-[var(--pet-primary)] flex items-center gap-2">
-        <i class="fas fa-paw"></i>
+        <div class="w-8 h-8 md:w-12 md:h-12 flex items-center justify-center">
+          <LottieAnimation 
+            animation-url="/animations/Dog Running.json"
+            class="w-full h-full"
+          />
+        </div>
         Pets Almeida
       </div>
       
